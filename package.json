@@ -1,0 +1,18 @@
+{
+  "name": "@nzepeda/RelatedArtits",
+  "version": "1.0.0",
+  "description": "This uses the Spotify Web API to give you suggestions on similar artists",
+  "scripts": {
+    "start": "node app/app.js"
+  },
+  "main": "app.js",
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "~4.2.4",
+    "npm": "~2.14.12"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
