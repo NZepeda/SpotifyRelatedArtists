@@ -1,0 +1,30 @@
+@import 'colors';
+
+.center{
+	text-align: center;
+}
+
+.hero{
+
+	height: 75%;
+	img{
+		width: 100%;
+		height: 100%;
+	}
+
+}
+
+.navbar{
+	margin: 0;
+}
+
+.navbar-default{
+	background-color: transparent;
+	border-width: 0px;
+
+	.navbar-brand{
+		color: $base-color;
+		font-size: 1.5em;
+	}
+}
+
