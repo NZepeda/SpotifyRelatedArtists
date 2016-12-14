@@ -1,0 +1,17 @@
+.navbar {
+	margin: 0;
+}
+
+.navbar-default {
+	background-color: transparent;
+	border-width: 0;
+
+	.navbar-brand {
+		color: $base-color;
+		font-size: 1.5em;
+	}
+}
+
+.hero-text-overlay {
+	text-align: center;
+}

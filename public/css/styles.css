@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:500");
-.center {
+.navbar {
+  margin: 0; }
+
+.navbar-default {
+  background-color: transparent;
+  border-width: 0; }
+  .navbar-default .navbar-brand {
+    color: #749595;
+    font-size: 1.5em; }
+
+.hero-text-overlay {
   text-align: center; }
 
 .hero {
@@ -23,17 +33,22 @@
       color: #f6fafa;
       font-family: 'Roboto', sans-serif; }
 
-.navbar {
-  margin: 0; }
+.search-bar {
+  margin-top: 2em; }
 
-.navbar-default {
-  background-color: transparent;
-  border-width: 0px; }
-  .navbar-default .navbar-brand {
-    color: #749595;
-    font-size: 1.5em; }
+.form-control {
+  width: 100%; }
 
-.hero-text-overlay {
+.btn-row {
+  text-align: center;
+  margin-top: 1em; }
+
+.search-btn {
+  width: 45%;
+  color: #f6fafa;
+  background-color: #749595; }
+
+.center {
   text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */

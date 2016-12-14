@@ -1,55 +1,9 @@
-@import 'colors';
+@import 'components/colors';
+@import 'components/navbar';
+@import 'components/hero';
+@import 'components/searchbar';
 @import url("https://fonts.googleapis.com/css?family=Roboto:500");
 
-.center{
-	text-align: center;
-}
-
-.hero{
-
-	height: 80%;
-
-	img{
-		z-index: -1;
-		width: 100%;
-		height: 100%;
-		position: relative;
-	}
-
-	.hero-text-overlay{
-		z-index: 999;
-    	left: 0;
-    	position:absolute;
-    	text-align:center;
-    	top: 30px;
-    	width: 100%;
-
-    	transform: translateY(300%);	
-
-    	h1{
-    		letter-spacing: 2px;
-    		font-size: 4em;
-    		color: $near-white;
-    		font-family: 'Roboto', sans-serif;
-    	}
-	}
-}
-
-.navbar{
-	margin: 0;
-}
-
-.navbar-default{
-
-	background-color: transparent;
-	border-width: 0px;
-
-	.navbar-brand{
-		color: $base-color;
-		font-size: 1.5em;
-	}
-}
-
-.hero-text-overlay{
+.center {
 	text-align: center;
 }
