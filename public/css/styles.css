@@ -48,6 +48,9 @@
   color: #f6fafa;
   background-color: #749595; }
 
+.twitter-typeahead {
+  display: block !important; }
+
 .center {
   text-align: center; }
 
