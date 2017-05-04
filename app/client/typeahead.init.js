@@ -1,10 +1,12 @@
-$(document).ready(function(){
+(function(){
 
+  window.artistSearch = function(element){
+    console.log(element);
     var remotehost = "https://api.spotify.com"
     $.support.cors = true;
 
     // Get our templates preped and ready for the show
-    var $form = $('form'),
+    var $form = $(element).closest('form'),
       artistSuggestionTmpl = $('.artist-template', $form).html();
 
     console.log(artistSuggestionTmpl);
@@ -29,10 +31,10 @@ $(document).ready(function(){
     artistEngine.initialize();
 
     // Configure the typehead
-    var typeAhead = $form.typeahead({
+    var typeAhead = $(element).typeahead({
         highlight: true,
-        minLength: 1 
-        }, 
+        minLength: 1
+        },
         {
             name: 'artists',
             displayKey: function (artist) {
@@ -50,10 +52,11 @@ $(document).ready(function(){
     });
 
     // Capture search term
-    $(window).bind('keyup', function () {
+    $(element).bind('keyup', function () {
         var searchTerm = $('input.typeahead.tt-input').val();
         $('input.typeahead.tt-input').prop("searchTerm", searchTerm);
         console.log(searchTerm);
     });
-
-});
+    return typeAhead;
+  }
+})(jQuery);
