@@ -7,7 +7,6 @@ directivesModule.directive('typeahead', ['$parse', '$location', '$window', '$rou
     typeAhead.on('typeahead:selected', function(obj, datum){
       scope.$apply(function(scope){
         var val = typeAhead.typeahead('val');
-        console.log('val');
       });
     });
   }

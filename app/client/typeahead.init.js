@@ -9,8 +9,6 @@
     var $form = $(element).closest('form'),
       artistSuggestionTmpl = $('.artist-template', $form).html();
 
-    console.log(artistSuggestionTmpl);
-
     // Set up the hound!
     var artistEngine = new Bloodhound({
         name:'artists',
@@ -23,7 +21,7 @@
             wildcard: '%QUERY'
         },
         filter: function(response){
-            return response.data.artists
+            return response.data.artists.items
         }
     });
 
@@ -38,7 +36,7 @@
         {
             name: 'artists',
             displayKey: function (artist) {
-            return artist;
+            return artist.items;
         },
         source: artistEngine.ttAdapter(),
         templates: {
@@ -55,7 +53,6 @@
     $(element).bind('keyup', function () {
         var searchTerm = $('input.typeahead.tt-input').val();
         $('input.typeahead.tt-input').prop("searchTerm", searchTerm);
-        console.log(searchTerm);
     });
     return typeAhead;
   }
