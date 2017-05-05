@@ -15,7 +15,8 @@ module.exports = function(app){
     app.use('/css', express.static(dirname + "public/css/"));
     app.use('/swal', express.static(dirname + "node_modules/sweetalert/dist/"));
     app.use('/modules', express.static(dirname + "node_modules/"));
-    app.use('/pics', express.static(dirname + "public/assets/"));
+    app.use('/assets', express.static(dirname + "public/assets/"));
     app.use('/libs', express.static(dirname + "public/js/"));
+    app.use('/assets', express.static(dirname + "/public"))
 
 }

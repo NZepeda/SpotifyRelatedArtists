@@ -14,9 +14,24 @@ controllerModule.controller('SearchController', ['Data', '$scope', '$q', functio
 
 controllerModule.controller('ResultsController', ['Data', '$scope', '$q', function(Data, $scope, $q){
 
+    $scope.userSelectedArtist = false;
+    $scope.artist = {};
+    $scope.similarArtists = [];
+    $scope.similarArtistsLoaded = false;
+
     $scope.$watch(function(){return Data.artistSelected}, function(newValue, oldValue){
-        if(newValue !== oldValue){
-            console.log(newValue);
+        if(newValue !== oldValue && newValue !== null){
+            
+            $scope.userSelectedArtist = true;
+            $scope.artist = newValue;
+
+            Data.getRelatedArtists($scope.artist.id).then(function(response){
+                $scope.userSelectedArtist = false;
+                $scope.similarArtists = response.data.artists;
+                $scope.similarArtistsLoaded = true;
+            });
         }
     }, true);
+
+    
 }]);

@@ -69,4 +69,15 @@
 .center {
   text-align: center; }
 
+.loading {
+  margin-top: 3em; }
+
+.thumbnail {
+  height: 300px;
+  width: 250px;
+  margin: 10px 10px; }
+  .thumbnail a img {
+    height: 70%;
+    width: 100%; }
+
 /*# sourceMappingURL=styles.css.map */
