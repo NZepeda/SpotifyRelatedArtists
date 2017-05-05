@@ -41,39 +41,30 @@
         </div>
 
         <div ng-app="RelatedArtists">
-            <div class="Search">
+            <div class="row search">
                 <form ng-submit="searchButtonClicked()" ng-controller="SearchController">
                     <!-- Search Bar -->
-                    <div class="row">
+                    <div class="row searchBar">
                         <div class="col-md-3"> </div>
                         <div class="col-md-6 search-bar">
                             <input type="text" class="form-control input-lg typeahead" data-jquery-typeahead data-typeahead placeholder="Search for..." ng-model="artist">
                         </div>
+                        <div class="col-md-3"> <button type="submit" class="btn btn-lg search-btn">Search</button>
                     </div>
-
-                    <!--Search button -->
-                    <div class="row btn-row">
-                        <div class="col-md-3"></div>
-                        <div class="col-md-6">
-                            <button type="submit" class="btn btn-lg search-btn">Search</button>
-                        </div>
-                        <div class="col-md-3"></div>
-                    </div>
-
-
                     <!-- Artist template -->
                     <script type="text/template" class="artist-template">
-                        <img src="{{ imagesTitle }}?mw=100" title="{{ imageTitle }}" alt="{{ imageAlt }}" />
-                        <span class="ratings">
-                            {{#ratings}}
-                            <img src="{{ imageSrc }}?mw=16" title="{{ imageTitle }}" alt="{{ imageAlt }}" />
-                            {{/ratings}}
-                        </span>
-                        <span class="content">
-                            <span class="title vert">{{ groupTitle }}</span>
-                        </span>
+                        <div class="drop-down">
+                            <img src="{{ images.0.url }}" height="100px" width="100px"/>
+                            <span class="content">
+                                <span class="artist-name">{{ name }}</span>
+                            </span>
+                        </div>
                     </script>
                   </form>
+            </div>
+
+            <div class="row results" ng-controller="ResultsController">
+                
             </div>
         </div>
     </body>

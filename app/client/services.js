@@ -4,6 +4,8 @@ servicesModule.service('Data', ['$location', '$http', '$q', '$window', function(
 
 var data = {};
 
+data.artistSelected = {};
+
 data.getArtistInfo = function(artist){
     console.log(artist);
     return $http({

@@ -5,6 +5,7 @@ directivesModule.directive('typeahead', ['$parse', '$location', '$window', '$rou
     var typeAhead = $window.artistSearch(element);
 
     typeAhead.on('typeahead:selected', function(obj, datum){
+      Data.artistSelected = datum;
       scope.$apply(function(scope){
         var val = typeAhead.typeahead('val');
       });

@@ -11,3 +11,12 @@ controllerModule.controller('SearchController', ['Data', '$scope', '$q', functio
     }
 
 }]);
+
+controllerModule.controller('ResultsController', ['Data', '$scope', '$q', function(Data, $scope, $q){
+
+    $scope.$watch(function(){return Data.artistSelected}, function(newValue, oldValue){
+        if(newValue !== oldValue){
+            console.log(newValue);
+        }
+    }, true);
+}]);

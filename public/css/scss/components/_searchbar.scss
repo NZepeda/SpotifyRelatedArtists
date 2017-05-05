@@ -1,5 +1,5 @@
 .search-bar{
-  margin-top: 2em;
+  position: relative;
 }
 
 .form-control{
@@ -12,7 +12,10 @@
 }
 
 .search-btn{
-  width: 45%;
   color: $near-white;
   background-color: $base-color;
+}
+
+.search{
+  height: 100%;
 }

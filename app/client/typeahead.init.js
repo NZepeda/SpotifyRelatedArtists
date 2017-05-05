@@ -1,7 +1,6 @@
 (function(){
 
   window.artistSearch = function(element){
-    console.log(element);
     var remotehost = "https://api.spotify.com"
     $.support.cors = true;
 
@@ -18,7 +17,10 @@
         dupDetector: function(a, b) {return a.id === b.id},
         remote: {
             url: remotehost + '/v1/search?q=%QUERY&type=artist',
-            wildcard: '%QUERY'
+            wildcard: '%QUERY',
+            filter: function(response){
+                return response.artists.items
+            }
         },
         filter: function(response){
             return response.data.artists.items
@@ -36,7 +38,7 @@
         {
             name: 'artists',
             displayKey: function (artist) {
-            return artist.items;
+            return artist.name
         },
         source: artistEngine.ttAdapter(),
         templates: {
@@ -56,4 +58,22 @@
     });
     return typeAhead;
   }
+
+  $(function(){
+
+    var $typeAhead = $('[data-jquery-typeahead]');
+
+    $typeAhead.each(function(){
+        //var typeAhead = window.artistSearch($(this)[0]);
+        var $form = $(this).closest('form');
+
+        $form.unbind('submit');
+        $form.submit(function(e){
+            //console.log($typeAhead);
+        });
+    });
+  });
+
+
+
 })(jQuery);
